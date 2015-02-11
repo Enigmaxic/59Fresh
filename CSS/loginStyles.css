@@ -1,0 +1,55 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 26, 2014, 3:29:47 PM
+    Author     : Smithers
+*/
+body {
+      background-image: url("../IMG/59SecondPitchLogo.png");
+}
+
+#newProfileForm, #investorForm, #entrepreneurForm {
+    background: white;
+    border-radius: 25px;
+    padding: 15px;
+}
+.modal-body{
+    width:35%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+#create{
+    height:700px;
+}
+#banner{
+    color:white;
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+
