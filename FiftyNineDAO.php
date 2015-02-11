@@ -15,7 +15,7 @@ class FiftyNineDAO {
     function __destruct() {
         
     }
-
+//test comment
     private function getDBConnection() {
         if (!isset($_mysqli)) {
             $_mysqli = new mysqli("128.180.178.4:3307", "guest", "pitch", "59secondpitch");
