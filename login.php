@@ -5,19 +5,25 @@ session_start();
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>59SecondPitch Login</title>
+
         <link href="CSS/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="themes/59Theme.min.css" />
+        <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css">
+        <link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" >
         <link href="CSS/loginStyles.css" rel="stylesheet">
 
-    </head>
-    <body>
         <script src="http://code.jquery.com/jquery.js"></script>
         <script src="JS/bootstrap.min.js"></script>
         <script src="JS/login.js"></script>
-        <link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" class="cssdeck">
-
-
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
 
         <?php
         //
@@ -157,129 +163,106 @@ session_start();
         ?>
 
 
+        <div data-role="page" data-theme="a">
 
-        <div class="" id="loginModal">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 id="banner">Have an Account?</h3>
+            <div data-role="header">
+                <h1>59 Second Pitch Login</h1>
             </div>
-            <div class="modal-body">
-                <div class="well">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#login" data-toggle="tab">Login</a></li>
-                        <li><a href="#create" data-toggle="tab">Create Account</a></li>
-                    </ul>
-                    <div id="myTabContent" class="tab-content">
-                        <div class="tab-pane active in" id="login">
-                            <form class="form-horizontal" action="loginVerify.php" method="POST">
-                                <fieldset>
-                                    <div id="legend">
-                                        <legend class="">Login</legend>
-                                    </div>    
-                                    <?php
-                                    
-                                    if (isset($_SESSION['loginError']) && !empty($_SESSION['loginError'])) {
-                                        echo "<font color='red'>".$_SESSION['loginError']."</font>";
-                                    }
-                                    ?>
-                                    <div class="control-group">
-                                        <!-- Email -->
-                                        <label class="control-label"  for="email">Email</label>
-                                        <div class="controls">
-                                            <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
-                                        </div>
-                                    </div>
 
-                                    <div class="control-group">
-                                        <!-- Password-->
-                                        <label class="control-label" for="password">Password</label>
-                                        <div class="controls">
-                                            <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
-                                        </div>
-                                    </div>
+            <div data-role="main" class="ui-content">
+                <div data-role="tabs" id="tabs">
+                    <div data-role="navbar">
+                        <ul>
+                            <li><a href="#login" class="ui-btn-active">Login</a></li>
+                            <li><a href="#signup">Create an Account</a></li>
+                        </ul>
+                    </div>
+                    <div id="login" class="ui-body-d ui-content">
+                        <form class="form-horizontal" action="loginVerify.php" method="POST">
+                            <?php
+                            if (isset($_SESSION['loginError']) && !empty($_SESSION['loginError'])) {
+                                echo "<font color='red'>" . $_SESSION['loginError'] . "</font>";
+                            }
+                            ?>
+                            <label for="email" class="ui-hidden-accessible">Email</label>
+                            <input type="text" id="email" name="email" placeholder="Email" >
 
+                            <!-- Password-->
+                            <label for="password" class="ui-hidden-accessible">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Password">
 
-                                    <div class="control-group">
-                                        <!-- Button -->
-                                        <div class="controls">
-                                            <button type="submit" class="btn btn-success" name="submit" value="login">Login</button>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </form>  
-                        </div>
-                        <div class="tab-pane fade" id="create">
-                            <form class="form-horizontal" id="newProfileForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" enctype="multipart/form-data">
-                                <div class="control-group">
-                                    <label class="control-label" for="email">Email:</label>
-                                    <div class="controls"><input type="text" id="email" name="email" value = "<?php echo $email; ?>"> <span class="error">* <?php echo $emailErr; ?></span></div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label" for="password">Password:</label>
-                                    <div class="controls"><input type="password" id="password" name="password" value = "<?php echo $password; ?>"><span class="error">* <?php echo $passwordErr; ?></span><br></div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label" for="repassword">Re-Enter Password:</label>
-                                    <div class="controls"><input type="password" id="repassword" name="repassword" value = "<?php echo $repassword; ?>"></div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label" for="firstname">First Name:</label>
-                                    <div class="controls"><input type="text" id="firstname" name="firstname" method ="post" value = "<?php echo $firstname; ?>"><span class="error">* <?php echo $firstnameErr; ?></span></div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label" for="lastname">Last Name:</label>
-                                    <div class="controls"><input type="text" id="lastname" name="lastname" value = "<?php echo $lastname; ?>"><span class="error">* <?php echo $lastnameErr; ?></span></div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label" for="age">Age:</label>
-                                    <div class="controls"><input type="text" id="age" name="age" value = "<?php echo $age; ?>"></div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label" for="almamater">University/Alma Mater:</label>
-                                    <div class="controls"><input type="text" id="almamater" name="almamater" value = "<?php echo $almamater; ?>"></div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label" for="city">City/Metro Area:</label>
-                                    <div class="controls">
-                                        <input type="text" id="city" name="city" value = "<?php echo $city; ?>">
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <!--<div class="control-label">
-                                        <span class="btn btn-default btn-file">
-                                            Upload Profile Picture <input type="file">
+                            <!-- Button -->
+                            <button type="submit" name="submit" value="login">Login</button>
+                        </form>
+                    </div>
+                    <div id="signup">
+                        <!--Form action is set to this page to perform checks on the fields-->
+                        <form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" enctype="multipart/form-data">
+
+                            <label for="email"  class="ui-hidden-accessible">Email:</label>
+                            <input type="text" id="email" name="email" placeholder="Email" value = "<?php echo $email; ?>"> 
+                            <span class="error"><?php if (!empty($emailErr)) {
+                                echo "*" . $emailErr;
+                            } ?></span>
+
+                            <label for="password" class="ui-hidden-accessible">Password:</label>
+                            <input type="password" id="password" name="password" placeholder="Password"value = "<?php echo $password; ?>">
+                            <span class="error"><?php if (!empty($passwordErr)) {
+                                echo "*" . $passwordErr;
+                            } ?>
+
+                                <label for="repassword" class="ui-hidden-accessible">Re-Enter Password:</label>
+                                <input type="password" id="repassword" name="repassword" placeholder="Re-Enter Password" value = "<?php echo $repassword; ?>">
+
+                                <label for="firstname" class="ui-hidden-accessible">First Name:</label>
+                                <input type="text" id="firstname" name="firstname" placeholder="First Name" method ="post" value = "<?php echo $firstname; ?>">
+                                <span class="error"><?php if (!empty($firstnameErr)) {
+                                echo "*" . $firstnameErr;
+                            } ?></span>
+
+                                <label for="lastname" class="ui-hidden-accessible">Last Name:</label>
+                                <input type="text" id="lastname" name="lastname" placeholder="Last Name"value = "<?php echo $lastname; ?>">
+                                <span class="error"><?php if (!empty($lastnameErr)) {
+                                echo "*" . $lastnameErr;
+                            } ?></span>
+
+                                <label for="age" class="ui-hidden-accessible">Age:</label>
+                                <input type="text" id="age" name="age" placeholder="Age" value = "<?php echo $age; ?>">
+
+                                <label for="almamater" class="ui-hidden-accessible">University/Alma Mater:</label>
+                                <input type="text" id="almamater" name="almamater" placeholder="University/Alma Mater" value = "<?php echo $almamater; ?>">
+
+                                <label for="city" class="ui-hidden-accessible">City/Metro Area:</label>
+                                <input type="text" id="city" name="city" placeholder="City/Metro Area" value = "<?php echo $city; ?>">
+
+                                <label for="profilePictureUpload" >Profile Picture:</label>
+                                <input type="file" name="profilePictureUpload" id="profilePictureUpload">
+                                <span class="error"><?php if (!empty($uploadErr)) {
+                                echo "*" . $uploadErr;
+                            } ?></span>
+
+                                <div data-role="fieldcontain">
+                                    <fieldset data-role="controlgroup">
+                                        <input type="radio" name="type" id="entrepreneurRadio" value="Entrepreneur"/>
+                                        <label for="entrepreneurRadio">Entrepreneur</label>
+
+                                        <input type="radio" name="type" id="investorRadio" value="Investor"/>
+                                        <label for="investorRadio">Investor</label>
+                                        <span class="error"><?php if (!empty($typeErr)) {
+                                            echo "*" . $typeErr;
+                                        } ?>
                                         </span>
-                                    </div>-->
-                                    <div class="controls">
-                                        <input type="file" name="profilePictureUpload" id="profilePictureUpload"><span class="error">* <?php echo $uploadErr; ?></span>
-                                        <!--<input id="profilePictureURL" type="text" readonly>--> 
-                                    </div>
+
+                                    </fieldset>
                                 </div>
-                                <div class="control-group">
-                                    <div class="controls">
-                                        <input type="radio" name="type" <?php
-                                    if (isset($type) && $type == "Entrepreneur") {
-                                        echo "Entrepreneur";
-                                    }
-                                    ?>value="Entrepreneur">Entrepreneur<span class="error">* <?php echo $typeErr; ?><br>
-                                            <input type="radio" name = "type" <?php
-                                        if (isset($type) && $type == "Investor") {
-                                            echo "Investor";
-                                        }
-                                    ?>value="Investor">Investor
-                                            </div>
-                                            </div>
-                                            <div class="control-group">
-                                                <div class="controls"><button type="submit" class="btn" name="submit" value="create">Submit</button></div>
-                                            </div>
-                                            </form>
-                                    </div>   
-                                </div>
-                        </div>
+                                <button type="submit" name="submit" value="create">Submit</button>
+
+                        </form>
                     </div>
                 </div>
+            </div>
+        </div>
+    </body>
+</html>
 
 
-
-                <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-                <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
