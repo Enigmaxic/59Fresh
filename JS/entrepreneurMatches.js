@@ -17,15 +17,23 @@ function displayIdeas(data) {
             pic = "PROFILE_PICTURES/"+profile["profilepicture"];
         }
         if (profile["contact_type"]==="Phone") {
-            /*$("body").append("<div class='panel panel-default businessCard'>" +
-                    "<div class='panel-heading'>" +
-                    "<h3 class='panel-title'>" + profile["firstname"] + " " + profile["lastname"] + "</h3>" +
-                    "</div>" +
-                    "<div class='panel-body'>" + profile["contact_type"] + ": " + profile[3] + "<br />" +
-                    "Contact Preferences: " + profile["contact_preferences"] +
-                    "</div>" +
-                    "</div>");*/
-             $("body").append('<div class="flip-container">'+
+            /*<div data-role="collapsible">
+  <h3>I'm a header</h3>
+  <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+</div>*/
+             
+            $("#set").append('<div data-role="collapsible" >'+
+            '<h3>'+profile["firstname"]+' '+profile["lastname"]+'</h3>'+
+            
+            '<p>'+profile["class"]+'</p>'+
+                '<p>Location: '+profile["city"]+'</p>'+
+                '<p>Age:'+profile["age"]+'</p>'+
+                '<p>Alma Mater:'+profile["almamter"]+'</p>'+
+                '<p>'+profile["phone"]+'</p>'+
+                '<p>Contact Preferences:'+profile["contact_preferences"]+'</p>'+
+                    +'</div>').collapsibleset('refresh');
+            
+            /*$("body").append('<div class="flip-container">'+
         '<div class="flipper">'+
             '<div class="front">'+
                 '<img src="'+pic+'" />'+
@@ -44,10 +52,22 @@ function displayIdeas(data) {
                 '<p>Contact Preferences:'+profile["contact_preferences"]+'</p>'+
             '</div>'+
         '</div>'+
-    '</div>');
+    '</div>');*/
+            
             
         } else if(profile["contact_type"]==="Email"){
-            $("body").append('<div class="flip-container">'+
+            
+            $("#set").append('<div data-role="collapsible" >'+
+            '<h3>'+profile["firstname"]+' '+profile["lastname"]+'</h3>'+
+            
+            '<p>'+profile["class"]+'</p>'+
+                '<p>Location: '+profile["city"]+'</p>'+
+                '<p>Age:'+profile["age"]+'</p>'+
+                '<p>Alma Mater:'+profile["almamter"]+'</p>'+
+                '<p>'+profile["email"]+'</p>'+
+                '<p>Contact Preferences:'+profile["contact_preferences"]+'</p>'+
+                    +'</div>').collapsibleset('refresh');
+            /*$("body").append('<div class="flip-container">'+
         '<div class="flipper">'+
             '<div class="front">'+
                 '<img src="'+pic+'" />'+
@@ -66,19 +86,23 @@ function displayIdeas(data) {
                 '<p>Contact Preferences:'+profile["contact_preferences"]+'</p>'+
             '</div>'+
         '</div>'+
-    '</div>');
+            
+    '</div>');*/
         }
         else  {
-            /*$("body").append("<div class='panel panel-default businessCard'>" +
-                    "<div class='panel-heading'>" +
-                    "<h3 class='panel-title'>" + profile["firstname"] + " " + profile["lastname"] + "</h3>" +
-                    "</div>" +
-                    "<div class='panel-body'>Phone: " + profile['phone'] + "<br>Email: " + profile['email'] + "<br />" +
-                    "Contact Preferences: " + profile["contact_preferences"] +
-                    "</div>" +
-                    "</div>");*/
+        
+            $("#set").append('<div data-role="collapsible" >'+
+            '<h3>'+profile["firstname"]+' '+profile["lastname"]+'</h3>'+
             
-            $("body").append('<div class="flip-container">'+
+            '<p>'+profile["class"]+'</p>'+
+                '<p>Location: '+profile["city"]+'</p>'+
+                '<p>Age:'+profile["age"]+'</p>'+
+                '<p>Alma Mater:'+profile["almamter"]+'</p>'+
+                '<p>'+profile["email"]+'</p>'+
+                '<p>'+profile["phone"]+'</p>'+
+                '<p>Contact Preferences:'+profile["contact_preferences"]+'</p>'+
+                    +'</div>').collapsibleset('refresh');
+            /*$("body").append('<div class="flip-container">'+
         '<div class="flipper">'+
             '<div class="front">'+
                 '<img src="'+pic+'"/>'+
@@ -97,18 +121,15 @@ function displayIdeas(data) {
                 '<p>Contact Preferences:'+profile["contact_preferences"]+'</p>'+
             '</div>'+
         '</div>'+
-    '</div>');
+    '</div>');*/
         }
-        /*else{
-            alert("entrepreneurMatches::profile length incorrect.  Length: " + Object.keys(profile).length);
-            alert(JSON.stringify(profile));
-        }*/
+        
     }
 }
 
 $(document).ready(function () {
     //initialize sidebar
-    $("ul#sidebar").sidebar({});
+    //$("ul#sidebar").sidebar({});
 
     //Grab investor contact info
     $.ajax({
