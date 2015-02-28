@@ -153,7 +153,7 @@ class FiftyNineDAO {
                 $investorContacts[] = $phoneContactRow;
                 //echo sizeof($investorContacts);               
             } else {
-                die("59DAO::getInvestorContactInfo");
+                die($individualRow['contact_types']);
             }
             //$i++;
         }

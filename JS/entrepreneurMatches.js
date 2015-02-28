@@ -28,7 +28,7 @@ function displayIdeas(data) {
             '<p>'+profile["class"]+'</p>'+
                 '<p>Location: '+profile["city"]+'</p>'+
                 '<p>Age:'+profile["age"]+'</p>'+
-                '<p>Alma Mater:'+profile["almamter"]+'</p>'+
+                '<p>Alma Mater:'+profile["almamater"]+'</p>'+
                 '<p>'+profile["phone"]+'</p>'+
                 '<p>Contact Preferences:'+profile["contact_preferences"]+'</p>'+
                     +'</div>').collapsibleset('refresh');
@@ -63,7 +63,7 @@ function displayIdeas(data) {
             '<p>'+profile["class"]+'</p>'+
                 '<p>Location: '+profile["city"]+'</p>'+
                 '<p>Age:'+profile["age"]+'</p>'+
-                '<p>Alma Mater:'+profile["almamter"]+'</p>'+
+                '<p>Alma Mater:'+profile["almamater"]+'</p>'+
                 '<p>'+profile["email"]+'</p>'+
                 '<p>Contact Preferences:'+profile["contact_preferences"]+'</p>'+
                     +'</div>').collapsibleset('refresh');
@@ -97,7 +97,7 @@ function displayIdeas(data) {
             '<p>'+profile["class"]+'</p>'+
                 '<p>Location: '+profile["city"]+'</p>'+
                 '<p>Age:'+profile["age"]+'</p>'+
-                '<p>Alma Mater:'+profile["almamter"]+'</p>'+
+                '<p>Alma Mater:'+profile["almamater"]+'</p>'+
                 '<p>'+profile["email"]+'</p>'+
                 '<p>'+profile["phone"]+'</p>'+
                 '<p>Contact Preferences:'+profile["contact_preferences"]+'</p>'+
@@ -130,13 +130,14 @@ function displayIdeas(data) {
 $(document).ready(function () {
     //initialize sidebar
     //$("ul#sidebar").sidebar({});
-
+    $.ajaxSetup({ cache: false });
     //Grab investor contact info
     $.ajax({
         type: "POST",
         dataType: "json",
         async: false,
         url: "fetchInvestorContactInfo.php",
+       
         //Set cover content to the 5 fetched profiles
         success: function (data) {
             displayIdeas(data);

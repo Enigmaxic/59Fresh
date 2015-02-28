@@ -5,16 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title></title>
 
-        <link rel="stylesheet" type="text/css" href="CSS/entrepreneurMatches.css" />
-        <link href="CSS/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="CSS/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+
+        <!-- <link href="CSS/bootstrap.min.css" rel="stylesheet" media="screen">
+         <link href="CSS/jquery-ui.min.css" rel="stylesheet" type="text/css"/>-->
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 
         <!--<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>-->
 
         <script src="http://code.jquery.com/jquery.js"></script>
-        <script src="JS/bootstrap.min.js"></script>-->
-        <script src="JS/jquery-ui.min.js" type="text/javascript"></script>
+        <!--<script src="JS/bootstrap.min.js"></script>-->
+        <!--<script src="JS/jquery-ui.min.js" type="text/javascript"></script>-->
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <!--<script type="text/javascript" src="JS/jquery.sidebar.js"></script>-->
 
@@ -33,7 +33,7 @@
 
             <div data-role="content" id="matches" style="background:'#000000'">	
                 <div data-role="collapsible-set" data-theme="b" data-content-theme="b" id="set">
-
+                    
                 </div>
             </div>
 
