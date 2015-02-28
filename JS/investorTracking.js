@@ -17,7 +17,7 @@ function displayIdeas(data) {
                         '<iframe width="150" height="150" src="' + profile['business_video'] + '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>'+
                     "</div>" +
                     "</div>");*/
-        $("body").append('<div class="flip-container">'+
+        /*$("body").append('<div class="flip-container">'+
         '<div class="flipper">'+
             '<div class="front" style"padding-top:0px;">'+
             
@@ -33,14 +33,32 @@ function displayIdeas(data) {
                 
                 '<div class="centered text-center">' + 
                         '<iframe width="200" height="250" src="' + profile['business_video'] + '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>'+
-                /*'<div class="sub">'+
+                '<div class="sub">'+
                     
-                '</div>'+*/
+                '</div>'+
                 
                 
             '</div>'+
         '</div>'+
-    '</div>');
+    '</div>');*/
+        
+        $("#set").append('<div data-role="collapsible" >'+
+            '<h3>'+profile["business_name"]+'</h3>'+
+            '<p>'+profile["business_type"]+'</p>'+
+                '<p>Creator: '+profile["firstname"]+' '+profile["lastname"]+'</p>'+
+                '<p>Location: '+profile["city"]+'</p>'+
+                '<p>Age:'+profile["age"]+'</p>'+
+                '<p>Alma Mater:'+profile["almamater"]+'</p>'+
+                
+                
+                '<p><div class="centered text-center">' + 
+                        '<iframe width="200" height="250" src="' + profile['business_video'] + '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>'+
+               
+                 
+            
+            
+            
+                    +'</div>').collapsibleset('refresh');
         
     }
 }
