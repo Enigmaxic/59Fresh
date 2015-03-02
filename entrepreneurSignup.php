@@ -38,7 +38,7 @@ session_start();
             }
 
             if (empty($_POST["business_video"])) {
-                $workDescerr = "Please provide a video URL";
+                $workDescerr = "Please provide a video ID";
                 $valid = false;
             } else {
                 $business_video = $_POST["business_video"];
@@ -54,34 +54,49 @@ session_start();
             }
         }
         ?>
+        <div data-role="page" data-theme="a">
 
-        <div class="container">
-            <!--form setup taken from tutorial for twitter bootstrap-->
-            <form id="entrepreneurForm" class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
-                <label for="businessType" class="select">Classification:</label>
-                <select name="businessType" id="businessType">
-                    <option value="Company">Company</option>
-                    <option value="Startup">Startup</option>
-                    <option value="Project">Project</option>
-                    <option value="Idea">Idea</option>
-                </select>
+            <div data-role="header">
+                <h1>Entrepreneur Sign Up</h1>
+            </div>
 
-                <label for="workName">Venture Name:</label>
-                <input type="text" id="workName" name="workName" value = "<?php
-                if (isset($_POST['business_name'])) {
-                    echo $_POST['business_name'];
-                } else if (isset($_POST['workName'])) {
-                    echo $_POST['workName'];
-                }
-        ?>"> 
-                <span class="error"><?php if (!empty($workNameerr)) {echo "*" . $workNameerr;} ?>
-                    
-                <label for="businessVideo">Pitch Video Vimeo ID:</label>
-                <input type="text" id="businessVideo" name="businessVideo" value = "<?php if (isset($_POST['business_video'])) {
-                    echo $_POST['business_video'];
-                }; ?>"> 
-                <span class="error"><?php if (!empty($businessVideoerr)) {echo "*" . $businessVideoerr;} ?>
-                <button type="submit" class="btn">Submit</button>
-            </form>
-        </div>
-    </body>
+            <div data-role="main" class="ui-content">
+                <form id="entrepreneurForm" class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+                    <label for="businessType" class="select">Classification:</label>
+                    <select name="businessType" id="businessType">
+                        <option value="Company">Company</option>
+                        <option value="Startup">Startup</option>
+                        <option value="Project">Project</option>
+                        <option value="Idea">Idea</option>
+                    </select>
+
+                    <label for="workName">Venture Name:</label>
+                    <input type="text" id="workName" name="workName" value = "<?php
+                    if (isset($_POST['business_name'])) {
+                        echo $_POST['business_name'];
+                    } else if (isset($_POST['workName'])) {
+                        echo $_POST['workName'];
+                    }
+                    ?>"> 
+                    <span class="error"><?php
+                        if (!empty($workNameerr)) {
+                            echo "*" . $workNameerr;
+                        }
+                        ?>
+
+                        <label for="businessVideo">Pitch Video Vimeo ID:</label>
+                        <input type="text" id="businessVideo" name="businessVideo" value = "<?php
+                        if (isset($_POST['business_video'])) {
+                            echo $_POST['business_video'];
+                        };
+                        ?>"> 
+                        <span class="error"><?php
+                            if (!empty($workDescerr)) {
+                                echo "*" . $workDescerr;
+                            }
+                        ?>
+                            <button type="submit" class="btn">Submit</button>
+                            </form>
+                            </div>
+                            </div>
+                            </body>
