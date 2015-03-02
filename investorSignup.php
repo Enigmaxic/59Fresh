@@ -12,15 +12,15 @@ $_SESSION['last_visited'] = "investorSignup";
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>59SecondPitch</title>
-        <link href="CSS/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="CSS/newProfileStyles.css" rel="stylesheet">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>     
+        <script src="JS/investorSignup.js"></script>
 
     </head>
     <body>
-        <script src="http://code.jquery.com/jquery.js"></script>
-        <script src="JS/bootstrap.min.js"></script>
-        <script src="JS/investorSignup.js"></script>
 
         <?php
         $userTypeerr = $contactTypeerr = $contactPreferr = "";
@@ -66,64 +66,47 @@ $_SESSION['last_visited'] = "investorSignup";
             }
         }
         ?>
+        <div data-role="page" data-theme="a">
 
+            <div data-role="header">
+                <h1>Investor Sign Up</h1>
+            </div>
 
-        <div class="container">
-            <!--form setup taken from tutorial for twitter bootstrap-->
-            <form id="investorForm" class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-                <div class="control-group">
-                    <label class="control-label">How would you classify yourself?</label>
-                    <div class="controls">
-                        <input id="investorRadio" type="radio" name="usertype" <?php
-                        if (isset($userType) && $userType == "Investor") {
-                            echo "Investor";
-                        }
-                        ?>value="Investor">Investor<span class="error">* <?php echo $userTypeerr; ?></span><br>
-                        <input id="advisorRadio" type="radio" name = "usertype" <?php
-                        if (isset($userType) && $userType == "Advisor") {
-                            echo "Advisor";
-                        }
-                        ?>value="Advisor">Advisor<br>
-                        <input id="helpingHandRadio" type="radio" name="usertype" <?php
-                        if (isset($userType) && $userType == "helpingHand") {
-                            echo "helpingHand";
-                        }
-                        ?>value="helpingHand">Helping Hand
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">How would you like to be contacted?</label>
-                    <div class="controls">
-                        <input id="phoneRadio" type="radio" name="contacttype" <?php
-                        if (isset($contactType) && $contactType == "Phone") {
-                            echo "Phone";
-                        }
-                        ?>value="Phone">Phone<span class="error">* <?php echo $contactTypeerr; ?></span><br>
-                        <input id="emailRadio" type="radio" name = "contacttype" <?php
-                        if (isset($contactType) && $contactType == "Email") {
-                            echo "Email";
-                        }
-                        ?>value="Email">Email<br>
-                        <input id="eitherRadio" type="radio" name="contacttype" <?php
-                        if (isset($contactType) && $contactType == "either") {
-                            echo "Either";
-                        }
-                        ?>value="Either">Either
-                    </div>
-                </div>
-                <div class="control-group" style="visibility:hidden" id="phoneNumber">
-                    <label class="control-label">Phone Number: </label>
-                    <div class="controls">
+            <div data-role="main" class="ui-content">
+                <form id="investorForm" class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+                    <label for="userType" class="select">Classification:</label>
+                    <select name="userType" id="userType">
+                        <option value="Investor">Investor</option>
+                        <option value="Advisor">Advisor</option>
+                        <option value="Helping Hand">Helping Hand</option>
+                    </select>
+
+                    <label for="contacttype" class="select">Method of Contact:</label>
+                    <select name="contacttype" id="contacttype">
+                        <option value="Email">Email</option>
+                        <option value="Phone">Phone</option>
+                        <option value="Either">Both</option>
+                    </select>
+                    <div class="control-group" style="visibility:hidden" id="phoneNumber">
+                        <label for="phoneNumber">Phone Number: </label>
                         <input type="text" name="phoneNumber">
                     </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label">What are your contact preferences?(days,times,etc.)</label>
-                    <div class="controls"><textarea name ="contactpref" value =""rows="4" cols="50"><?php echo $contactPref; ?></textarea><span class="error">* <?php echo $contactPreferr; ?></span><br></div>
-                </div>
-                <div class="control-group">
-                    <div class="controls"><button type="submit" class="btn">Submit</button></div>
-                </div>
-            </form>
+                    <span class="error"><?php
+                        if (!empty($contactTypeerr)) {
+                            echo "*" . $contactTypeerr;
+                        }
+                        ?></span>
+
+                    <label for="contactpref">What are your contact preferences?(days,times,etc.)</label>
+                    <textarea name ="contactpref" value =""rows="4" cols="50"></textarea>
+                    <span class="error"><?php
+                        if (!empty($contactPreferr)) {
+                            echo "*" . $contactPreferr;
+                        }
+                        ?></span>
+
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
         </div>
     </body>

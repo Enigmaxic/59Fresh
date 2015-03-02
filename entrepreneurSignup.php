@@ -11,12 +11,15 @@ session_start();
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>59SecondPitch</title>
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    </head>
-    <body>
+        
+        
         <script src="http://code.jquery.com/jquery.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
 
         <?php
         $workType = $workName = $workDesc = $business_video = "";
@@ -82,21 +85,21 @@ session_start();
                         if (!empty($workNameerr)) {
                             echo "*" . $workNameerr;
                         }
-                        ?>
+                        ?></span>
 
-                        <label for="businessVideo">Pitch Video Vimeo ID:</label>
-                        <input type="text" id="businessVideo" name="businessVideo" value = "<?php
-                        if (isset($_POST['business_video'])) {
-                            echo $_POST['business_video'];
-                        };
-                        ?>"> 
-                        <span class="error"><?php
-                            if (!empty($workDescerr)) {
-                                echo "*" . $workDescerr;
-                            }
-                        ?>
-                            <button type="submit" class="btn">Submit</button>
-                            </form>
-                            </div>
-                            </div>
-                            </body>
+                    <label for="businessVideo">Pitch Video Vimeo ID:</label>
+                    <input type="text" id="businessVideo" name="businessVideo" value = "<?php
+                    if (isset($_POST['business_video'])) {
+                        echo $_POST['business_video'];
+                    };
+                    ?>"> 
+                    <span class="error"><?php
+                        if (!empty($workDescerr)) {
+                            echo "*" . $workDescerr;
+                        }
+                        ?></span>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </body>
