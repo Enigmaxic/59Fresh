@@ -57,7 +57,7 @@ session_start();
             }
         }
         ?>
-        <div data-role="page" data-theme="a">
+        <div data-role="page" data-theme="b">
 
             <div data-role="header">
                 <h1>Entrepreneur Sign Up</h1>

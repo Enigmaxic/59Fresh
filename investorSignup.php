@@ -66,7 +66,7 @@ $_SESSION['last_visited'] = "investorSignup";
             }
         }
         ?>
-        <div data-role="page" data-theme="a">
+        <div data-role="page" data-theme="b">
 
             <div data-role="header">
                 <h1>Investor Sign Up</h1>

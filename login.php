@@ -4,14 +4,14 @@ session_start();
 ?>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>59SecondPitch Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
 
         <link href="CSS/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link rel="stylesheet" href="themes/59Theme.min.css" />
+        <link rel="stylesheet" href="themes/59Th.min.css" />
         <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
         <link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css">
         <link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" >
         <link href="CSS/loginStyles.css" rel="stylesheet">
@@ -163,7 +163,7 @@ session_start();
         ?>
 
 
-        <div data-role="page" data-theme="a">
+        <div data-role="page" data-theme="b">
 
             <div data-role="header">
                 <h1>59 Second Pitch Login</h1>
