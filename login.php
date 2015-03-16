@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
+include_once 'ChromePhp.php';
 ?>
 <html>
     <head>
@@ -96,6 +97,7 @@ session_start();
                     $target_file = $target_dir . basename($_FILES["profilePictureUpload"]["name"]);
                     $uploadOk = 1;
                     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+                    ChromePhp::log($target_file . " " . $imageFileType);
 
                     // Check if image file is a actual image or fake image
                     $check = getimagesize($_FILES["profilePictureUpload"]["tmp_name"]);
@@ -122,7 +124,7 @@ session_start();
 
                     // Allow certain file formats
                     if (strcasecmp($imageFileType, "jpg") && strcasecmp($imageFileType, "png") && strcasecmp($imageFileType, "jpeg") && strcasecmp($imageFileType, "gif")) {
-                        $uploadErr = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                        $uploadErr = "Sorry, only JPG, JPEG, PNG & GIF files are allowed." . $imageFileType . "finsihing it off";
                         $uploadOk = 0;
                     }
 
