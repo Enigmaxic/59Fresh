@@ -24,7 +24,7 @@
         <script src="JS/entrepreneurMatches.js"></script>
             <div data-role="header">
                 
-                <a href="/59SecondPitch/investorHome.php" rel="external" data-icon="home">Home</a>
+                <a href="/59SecondPitch/entrepreneurHome.php" rel="external" data-icon="home">Home</a>
                 <h1>Matches</h1>					
                 <a href="#" data-icon="bars">Menu</a>
 
