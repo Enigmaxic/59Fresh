@@ -58,7 +58,7 @@ function displayIdeas(data) {
             
             
             
-                    +'</div>').collapsibleset('refresh');
+                    '</div>').collapsibleset('refresh');
         
     }
 }

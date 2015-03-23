@@ -101,7 +101,7 @@ function displayIdeas(data) {
                 '<p>'+profile["email"]+'</p>'+
                 '<p>'+profile["phone"]+'</p>'+
                 '<p>Contact Preferences:'+profile["contact_preferences"]+'</p>'+
-                    +'</div>').collapsibleset('refresh');
+                    '</div>').collapsibleset('refresh');
             /*$("body").append('<div class="flip-container">'+
         '<div class="flipper">'+
             '<div class="front">'+
