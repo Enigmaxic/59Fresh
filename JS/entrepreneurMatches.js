@@ -127,10 +127,11 @@ function displayIdeas(data) {
     }
 }
 
-$(document).ready(function () {
+$(document).on("pageinit",function () {
     //initialize sidebar
     //$("ul#sidebar").sidebar({});
-    $.ajaxSetup({ cache: false });
+    
+    alert("here");
     //Grab investor contact info
     $.ajax({
         type: "POST",
@@ -140,10 +141,12 @@ $(document).ready(function () {
        
         //Set cover content to the 5 fetched profiles
         success: function (data) {
+            
             displayIdeas(data);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             alert("Error: " + jqXHR.responseText);
+            alert("fdnsjdgkgsmgkd");
         }
     });
 });

@@ -18,10 +18,12 @@ include_once 'fiftynineDAO.php';
         <link href="CSS/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="CSS/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
         <link href="CSS/carousel.css" rel="stylesheet">
+                <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 
         <script src="http://code.jquery.com/jquery.js"></script>
         <script src="JS/bootstrap.min.js"></script>
         <script src="JS/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="JS/jquery.sidebar.js"></script>
         <script src="JS/jquery.coverflow.js"></script>
 
@@ -56,7 +58,7 @@ include_once 'fiftynineDAO.php';
                         <img class="img-circle" src="IMG/Matches.GIF" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                         <h2>Matches</h2>
                         <p>Find out who wants to start a conversation.</p>
-                        <p><a class="btn btn-default" href="/59SecondPitch/entrepreneurMatches.php" role="button">View Matches »</a></p>
+                        <p><a data-role="button" rel="external" href="/59SecondPitch/entrepreneurMatches.php" >View Matches »</a></p>
                     </div><!-- /.col-lg-4 -->
                     <div class="span4 col-lg-4">
                         <img class="img-circle" src="IMG/Brain.gif" alt="Generic placeholder image" style="width: 140px; height: 140px;">

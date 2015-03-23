@@ -129,6 +129,7 @@ class FiftyNineDAO {
                         "AND 59profile.59profileid = " . $row[0];
                 $eitherContactResult = $this->executeSQL($eitherContactSQL);
                 $eitherContactRow = mysqli_fetch_array($eitherContactResult);
+
                 $investorContacts[] = $eitherContactRow;
             } elseif ($individualRow['contact_type'] == "Email") {
                 $emailContactSQL = "SELECT firstname,lastname,class,age,almamater,city,contact_type,email,contact_preferences,profilepicture " .
@@ -138,7 +139,6 @@ class FiftyNineDAO {
 
                 $emailContactResult = $this->executeSQL($emailContactSQL);
                 $emailContactRow = mysqli_fetch_array($emailContactResult);
-                // echo $i . " " . $emailContactRow["firstname"] . " " . $emailContactRow["lastname"] . " " . $emailContactRow["contact_type"] . " " . $emailContactRow[3] . " " . $emailContactRow["contact_preferences"];
                 $investorContacts[] = $emailContactRow;
                 //echo sizeof($investorContacts);
             } elseif ($individualRow['contact_type'] == "Phone") {
@@ -149,7 +149,6 @@ class FiftyNineDAO {
 
                 $phoneContactResult = $this->executeSQL($phoneContactSQL);
                 $phoneContactRow = mysqli_fetch_array($phoneContactResult);
-                // echo $i . " " . $emailContactRow["firstname"] . " " . $emailContactRow["lastname"] . " " . $emailContactRow["contact_type"] . " " . $emailContactRow[3] . " " . $emailContactRow["contact_preferences"];
                 $investorContacts[] = $phoneContactRow;
                 //echo sizeof($investorContacts);               
             } else {
