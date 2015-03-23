@@ -131,7 +131,7 @@ $(document).on("pageinit",function () {
     //initialize sidebar
     //$("ul#sidebar").sidebar({});
     
-    alert("here");
+    
     //Grab investor contact info
     $.ajax({
         type: "POST",
@@ -146,7 +146,7 @@ $(document).on("pageinit",function () {
         },
         error: function (jqXHR, textStatus, errorThrown) {
             alert("Error: " + jqXHR.responseText);
-            alert("fdnsjdgkgsmgkd");
+            
         }
     });
 });

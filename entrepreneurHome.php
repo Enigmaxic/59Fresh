@@ -64,13 +64,13 @@ include_once 'fiftynineDAO.php';
                         <img class="img-circle" src="IMG/Brain.gif" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                         <h2>Ventures</h2>
                         <p>You're a genius and we both know it.  Let's show the world what you're made of.</p>
-                        <p><a class="btn btn-default" href="/59SecondPitch/entrepreneurIdeas.php" role="button">View Ideas »</a></p>
+                        <p><a data-role="button" rel="external" href="/59SecondPitch/entrepreneurIdeas.php" >View Ideas »</a></p>
                     </div><!-- /.col-lg-4 -->
                     <div class="span4 col-lg-4">
                         <img class="img-circle" src="IMG/Statistics.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                         <h2>Statistics</h2>
                         <p>Numbers speak louder than words.</p>
-                        <p><a class="btn btn-default" href="/59SecondPitch/entrepreneurStatistics.php" role="button">View Statistics »</a></p>
+                        <p><a data-role="button" rel="external" href="/59SecondPitch/entrepreneurStatistics.php" >View Statistics »</a></p>
                     </div><!-- /.col-lg-4 -->
                 </div><!-- /.row -->
             </div>

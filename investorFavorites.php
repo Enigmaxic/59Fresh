@@ -11,17 +11,17 @@
         <link rel="stylesheet" type="text/css" href="CSS/entrepreneurMatches.css" />
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 
-        <script src="http://code.jquery.com/jquery.js"></script>
+        
+    </head>
+    <body>
+         <div data-role="page" data-theme="b">
+             <script src="http://code.jquery.com/jquery.js"></script>
         <script src="JS/bootstrap.min.js"></script>
         <script src="JS/jquery-ui.min.js" type="text/javascript"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="JS/jquery.sidebar.js"></script>
 
         <script src="JS/investorFavorites.js"></script>
-
-    </head>
-    <body>
-         <div data-role="page" data-theme="b">
 
             <div data-role="header">
                 <a href="#" data-icon="home">Home</a>
