@@ -97,7 +97,17 @@ include_once 'ChromePhp.php';
                     $target_file = $target_dir . basename($_FILES["profilePictureUpload"]["name"]);
                     $uploadOk = 1;
                     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-                    ChromePhp::log($target_file . " " . $imageFileType);
+                    ChromePhp::log('isset: ' . isset($_FILES));
+                    ChromePhp::log('empty: ' . empty($_FILES));
+                    ChromePhp::log('var_dump: ' . var_dump($_FILES));
+                    ChromePhp::log('print_r: ' . print_r($_FILES,true));
+                    ChromePhp::log('php.ini location: ' . php_ini_loaded_file());
+                    ChromePhp::log('php version: ' . phpversion());
+                    ChromePhp::log('post max size: '. ini_get('post_max_size'));
+                    ChromePhp::log('file_uploads: '. ini_get('file_uploads'));
+                    ChromePhp::log('upload_tmp_dir: '. ini_get('upload_tmp_dir'));
+                    ChromePhp::log('upload_max_filesize: '. ini_get('upload_max_filesize'));
+                    ChromePhp::log('max_file_uploads: '. ini_get('max_file_uploads'));
 
                     // Check if image file is a actual image or fake image
                     $check = getimagesize($_FILES["profilePictureUpload"]["tmp_name"]);
@@ -180,7 +190,7 @@ include_once 'ChromePhp.php';
                         </ul>
                     </div>
                     <div id="login" class="ui-body-d ui-content">
-                        <form class="form-horizontal" action="loginVerify.php" method="POST">
+                        <form class="form-horizontal" action="loginVerify.php" method="POST" enctype='multipart/form-data'>
                             <?php
                             if (isset($_SESSION['loginError']) && !empty($_SESSION['loginError'])) {
                                 echo "<font color='red'>" . $_SESSION['loginError'] . "</font>";
@@ -199,7 +209,7 @@ include_once 'ChromePhp.php';
                     </div>
                     <div id="signup">
                         <!--Form action is set to this page to perform checks on the fields-->
-                        <form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" enctype="multipart/form-data">
+                        <form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" enctype='multipart/form-data'>
 
                             <label for="email"  class="ui-hidden-accessible">Email:</label>
                             <input type="text" id="email" name="email" placeholder="Email" value = "<?php echo $email; ?>"> 
@@ -211,7 +221,7 @@ include_once 'ChromePhp.php';
                             <input type="password" id="password" name="password" placeholder="Password"value = "<?php echo $password; ?>">
                             <span class="error"><?php if (!empty($passwordErr)) {
                                 echo "*" . $passwordErr;
-                            } ?>
+                            } ?></span>
 
                                 <label for="repassword" class="ui-hidden-accessible">Re-Enter Password:</label>
                                 <input type="password" id="repassword" name="repassword" placeholder="Re-Enter Password" value = "<?php echo $repassword; ?>">
@@ -238,6 +248,7 @@ include_once 'ChromePhp.php';
                                 <input type="text" id="city" name="city" placeholder="City/Metro Area" value = "<?php echo $city; ?>">
 
                                 <label for="profilePictureUpload" >Profile Picture:</label>
+                                <input type="hidden" name="MAX_FILE_SIZE" value="30000" >
                                 <input type="file" name="profilePictureUpload" id="profilePictureUpload">
                                 <span class="error"><?php if (!empty($uploadErr)) {
                                 echo "*" . $uploadErr;
@@ -245,10 +256,10 @@ include_once 'ChromePhp.php';
 
                                 <div data-role="fieldcontain">
                                     <fieldset data-role="controlgroup">
-                                        <input type="radio" name="type" id="entrepreneurRadio" value="Entrepreneur"/>
+                                        <input type="radio" name="type" id="entrepreneurRadio" value="Entrepreneur">
                                         <label for="entrepreneurRadio">Entrepreneur</label>
 
-                                        <input type="radio" name="type" id="investorRadio" value="Investor"/>
+                                        <input type="radio" name="type" id="investorRadio" value="Investor">
                                         <label for="investorRadio">Investor</label>
                                         <span class="error"><?php if (!empty($typeErr)) {
                                             echo "*" . $typeErr;
