@@ -7,7 +7,7 @@ function displayStatistics(data) {
     for (i = 0; i < Object.keys(data).length; i++) {
         profile = data["" + i];
         
-        $("body").append('<div class="flip-container">'+
+        /*$("body").append('<div class="flip-container">'+
         '<div class="flipper">'+
             '<div class="front">'+
                 
@@ -27,7 +27,13 @@ function displayStatistics(data) {
                 
             '</div>'+
         '</div>'+
-    '</div>');
+    '</div>');*/
+        $("#set").append('<div data-role="collapsible" >'+
+            '<h3>'+profile[0]+'</h3>'+
+            
+                '<p><span style="color:green; font-weight:bold;">Matches:   </span>'+ profile[1]+'</p>'+
+                "<p><span style='color:red; font-weight:bold;'>No's:   </span>" + profile[2] + '</p><br><br>'
+                    +'</div>').collapsibleset('refresh');
     }
 }
  /*$("body").append("<div class='panel panel-default businessCard'>" +
@@ -44,7 +50,7 @@ function displayStatistics(data) {
 
 $(document).ready(function () {
     //initialize sidebar
-    $("ul#sidebar").sidebar({});
+    
 
     //Grab investor contact info
     $.ajax({
