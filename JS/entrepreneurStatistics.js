@@ -32,8 +32,8 @@ function displayStatistics(data) {
             '<h3>'+profile[0]+'</h3>'+
             
                 '<p><span style="color:green; font-weight:bold;">Matches:   </span>'+ profile[1]+'</p>'+
-                "<p><span style='color:red; font-weight:bold;'>No's:   </span>" + profile[2] + '</p><br><br>'
-                    +'</div>').collapsibleset('refresh');
+                "<p><span style='color:red; font-weight:bold;'>No's:   </span>" + profile[2] + '</p><br><br>' +
+                '</div>').collapsibleset('refresh');
     }
 }
  /*$("body").append("<div class='panel panel-default businessCard'>" +
@@ -49,9 +49,7 @@ function displayStatistics(data) {
                 "</div>");*/
 
 $(document).ready(function () {
-    //initialize sidebar
     
-
     //Grab investor contact info
     $.ajax({
         type: "POST",
@@ -65,5 +63,10 @@ $(document).ready(function () {
         error: function (jqXHR, textStatus, errorThrown) {
             alert("Error: " + jqXHR.responseText);
         }
+    });
+    
+    $('select').on('change', function() {
+        var page = $(this).val();
+        $.mobile.changePage(page);
     });
 });

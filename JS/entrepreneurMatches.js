@@ -31,7 +31,7 @@ function displayIdeas(data) {
                 '<p>Alma Mater:'+profile["almamater"]+'</p>'+
                 '<p>'+profile["phone"]+'</p>'+
                 '<p>Contact Preferences:'+profile["contact_preferences"]+'</p>'+
-                    +'</div>').collapsibleset('refresh');
+                '</div>').collapsibleset('refresh');
             
             /*$("body").append('<div class="flip-container">'+
         '<div class="flipper">'+
@@ -66,7 +66,7 @@ function displayIdeas(data) {
                 '<p>Alma Mater:'+profile["almamater"]+'</p>'+
                 '<p>'+profile["email"]+'</p>'+
                 '<p>Contact Preferences:'+profile["contact_preferences"]+'</p>'+
-                    +'</div>').collapsibleset('refresh');
+                '</div>').collapsibleset('refresh');
             /*$("body").append('<div class="flip-container">'+
         '<div class="flipper">'+
             '<div class="front">'+
@@ -101,7 +101,7 @@ function displayIdeas(data) {
                 '<p>'+profile["email"]+'</p>'+
                 '<p>'+profile["phone"]+'</p>'+
                 '<p>Contact Preferences:'+profile["contact_preferences"]+'</p>'+
-                    '</div>').collapsibleset('refresh');
+                '</div>').collapsibleset('refresh');
             /*$("body").append('<div class="flip-container">'+
         '<div class="flipper">'+
             '<div class="front">'+
@@ -150,5 +150,12 @@ $(document).on("pageinit",function () {
         }
     });
 });
+$(document).ready(function() {
+    $('select').on('change', function() {
+        var page = $(this).val();
+        $.mobile.changePage(page);
+    });
+});
+
 
 

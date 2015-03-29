@@ -73,10 +73,7 @@ include_once 'FiftyNineDAO.php';
                 </div>
             </div>
         </div>
-        
-        
-
-
+       
 
     </body>
 </html>

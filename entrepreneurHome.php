@@ -15,7 +15,7 @@ include_once 'fiftynineDAO.php';
         <title>Entrepreneur Home</title>
     </head>
     <body>
-        <div id ="entrepreneurHomePage" data-role="page" data-theme="b">
+        <div id ="entrepreneurHomePage" data-role="page" >
             <link href="CSS/bootstrap.min.css" rel="stylesheet" media="screen">
             <link href="CSS/carousel.css" rel="stylesheet">
             <link rel="stylesheet" href="themes/59Th.min.css" />
@@ -48,7 +48,7 @@ include_once 'fiftynineDAO.php';
                 </a>
             </div><!-- /header -->
 
-            <div data-role="body">
+            <div data-role="body" data-theme="none">
                 <div>
                     <p id="quote">"A man may die, nations may rise and fall, but an idea lives on." -JFK</p>
                 </div>
