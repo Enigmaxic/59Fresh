@@ -10,6 +10,12 @@ if (isset($_SESSION['last_visited']) && $_SESSION['last_visited'] == "entreprene
     $profiles = $dao->getStatistics($profileID);
     //die(count($profiles);
     echo json_encode($profiles);
+    
+    
+    
+    
+    
+    //ffdksfmslfkdn
 }
 ?>
 

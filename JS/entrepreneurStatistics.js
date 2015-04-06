@@ -1,7 +1,8 @@
 
 function displayStatistics(data) {
     var profile;
-    
+    var feedback1="";
+    var feedback2="";
     
     for (i = 0; i < Object.keys(data).length; i++) {
         profile = data["" + i];
@@ -41,8 +42,6 @@ function displayStatistics(data) {
                 '<p><span style="color:white;">' + profile[4] + '</p><br><br>' +
                 '</div>').collapsibleset('refresh');*/
     }
-    
-
 }
  /*$("body").append("<div class='panel panel-default businessCard'>" +
                 "<div class='panel-heading'>" +
