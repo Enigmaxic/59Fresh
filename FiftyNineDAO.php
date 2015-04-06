@@ -5,7 +5,7 @@ include_once "EntrepreneurProfile.php";
 include_once "InvestorProfile.php";
 
 class FiftyNineDAO {
-
+//Just for commit
     private $_mysqli;
 
     function __construct() {
