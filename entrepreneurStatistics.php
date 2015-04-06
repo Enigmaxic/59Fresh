@@ -25,7 +25,7 @@
             </div><!-- /header -->
 
             <div data-role="content" id="stats" style="background:'#000000'">	
-                <a href="#feedback" rel="external" data-role="button">View Feedback</a>
+                <button id ="viewFeedback" rel="external" >View Feedback</button>
                 <div data-role="collapsible-set" data-theme="b" data-content-theme="b" id="set"></div>
             </div>
 
