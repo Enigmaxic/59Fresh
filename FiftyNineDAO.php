@@ -368,6 +368,48 @@ class FiftyNineDAO {
 
         $this->executeSQL($sql);
     }
+    public function getFeedback($fiftynineprofileid){
+        $statistics = array();
+        $con = $this->getDBConnection();
+
+        //Get all the business_id's that the entrepreneur has
+        $business_idSQL = "SELECT business_id " .
+                "FROM entrepreneur " .
+                "WHERE 59profileid = " . $fiftynineprofileid;
+
+        $result = $this->executeSQL($business_idSQL);
+        while ($row = mysqli_fetch_array($result)) {
+
+            $nameSQL = "SELECT business_name " .
+                    "FROM entrepreneur " .
+                    "WHERE business_id = " . $row[0];
+                    
+            $feedbackSQL = "SELECT regular,other " .
+                    "FROM feedback " .
+                    "WHERE business_id = " . $row[0];
+
+            $nameResult = $this->executeSQL($nameSQL);
+            $nameRow = mysqli_fetch_array($nameResult);
+            $feedbackResult = $this->executeSQL($feedbackSQL);
+            
+           
+            
+            while($feedbackRow = mysqli_fetch_array($feedbackResult)){
+            $feedback1="";
+            $feedback2="";
+            if($feedbackRow['regular']!=null){
+                 $feedback1=$feedbackRow['regular'];
+             }       
+             if($feedbackRow['other']!=null){
+                 $feedback2=$feedbackRow['other'];;
+             }
+            $statistics[] = [$nameRow[0],$feedback1,$feedback2];
+            }
+        }
+
+        return $statistics;
+        
+    }
 
     public function getStatistics($fiftynineprofileid) {
         $statistics = array();

@@ -43,9 +43,6 @@ function displayNewProfiles(data) {
 }
 
 $(document).ready(function() {
-    //initialize sidebar
-    $("ul#demo_menu1").sidebar({});
-
     //Grab 5 profiles to start
     $.ajax({
         type: "POST",

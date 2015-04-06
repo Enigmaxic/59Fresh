@@ -20,7 +20,6 @@ and open the template in the editor.
     background-color:gray;
     font-weight: bold;
 }
-
 body {
     background: #000000;
     color: #999;
@@ -150,4 +149,12 @@ h3 {
 
 p{
     font-size: 15px;
+}
+li{
+    display: inline-block;
+    white-space:normal;
+}
+.ui-btn{
+    display: inline-block;
+    white-space:normal;
 }
