@@ -190,7 +190,7 @@ include_once 'ChromePhp.php';
                         </ul>
                     </div>
                     <div id="login" class="ui-body-d ui-content">
-                        <form class="form-horizontal" action="loginVerify.php" method="POST" enctype='multipart/form-data' data-ajax='false'>
+                        <form class="form-horizontal" action="loginVerify.php" method="POST" enctype='multipart/form-data'>
                             <?php
                             if (isset($_SESSION['loginError']) && !empty($_SESSION['loginError'])) {
                                 echo "<font color='red'>" . $_SESSION['loginError'] . "</font>";
@@ -209,7 +209,7 @@ include_once 'ChromePhp.php';
                     </div>
                     <div id="signup">
                         <!--Form action is set to this page to perform checks on the fields-->
-                        <form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" enctype='multipart/form-data' data-ajax='false'>
+                        <form class="form-horizontal" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" enctype='multipart/form-data'>
 
                             <label for="email"  class="ui-hidden-accessible">Email:</label>
                             <input type="text" id="email" name="email" placeholder="Email" value = "<?php echo $email; ?>"> 

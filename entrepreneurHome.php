@@ -33,17 +33,21 @@ include_once 'fiftynineDAO.php';
             ?>
 
             <div data-role="header" data-position="inline" data-theme="b">
-                <h1>Home</h1>
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="/59SecondPitch/manageProfile.php" rel='external'>Manage Profile</a></li>
-                        <li><a href="/59SecondPitch/entrepreneurIdeas.php" rel='external'>My Ventures</a></li>
-                        <li><a href="/59SecondPitch/entrepreneurMatches.php" rel='external'>Matches</a></li>
-                        <li><a href="/59SecondPitch/entrepreneurStatistics.php" rel='external'>Statistics</a></li>
-                        <li><a href="/59SecondPitch/login.php" rel='external'>Logout</a></li>
-                    </ul>
-                </div><!-- /navbar -->
-            </div>
+                <a href="/59SecondPitch/entrepreneurHome.php" rel="external" data-icon="home">Home</a>
+                <h1>Entrepreneur Home</h1>
+                <a data-role="none">
+                    <label for="navMenu" class="ui-hidden-accessible">Menu</label>
+                    <select name="navMenu" id="navMenu" data-icon="bars">
+                        <option selected disabled>Menu</option>
+                        <option value="/59SecondPitch/manageProfile.php">Manage Profile</option>
+                        <option value="/59SecondPitch/entrepreneurIdeas.php">My Ventures</option>
+                        <option value="/59SecondPitch/entrepreneurMatches.php">Matches</option>
+                        <option value="/59SecondPitch/entrepreneurStatistics.php">Statistics</option>
+                        <option value="/59SecondPitch/login.php">Logout</option>
+                    </select>
+                </a>
+            </div><!-- /header -->
+
             <div data-role="body" data-theme="none">
                 <div>
                     <p id="quote">"A man may die, nations may rise and fall, but an idea lives on." -JFK</p>
@@ -55,21 +59,22 @@ include_once 'fiftynineDAO.php';
                         <h2>Matches</h2>
                         <p>Find out who wants to start a conversation.</p>
                         <p><a data-role="button" rel="external" href="/59SecondPitch/entrepreneurMatches.php" >View Matches »</a></p>
-                    </div>
+                    </div><!-- /.col-lg-4 -->
                     <div class="row">
                         <img class="img-circle" src="IMG/Brain.gif" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                         <h2>Ventures</h2>
                         <p>You're a genius and we both know it.  Let's show the world what you're made of.</p>
                         <p><a data-role="button" rel="external" href="/59SecondPitch/entrepreneurIdeas.php" >View Ideas »</a></p>
-                    </div>
+                    </div><!-- /.col-lg-4 -->
                     <div class="row">
                         <img class="img-circle" src="IMG/Statistics.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;">
                         <h2>Statistics</h2>
                         <p>Numbers speak louder than words.</p>
                         <p><a data-role="button" rel="external" href="/59SecondPitch/entrepreneurStatistics.php" >View Statistics »</a></p>
-                    </div>
-                </div>
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
             </div>
         </div>
-    </body>
+    </div>
+</body>
 </html>

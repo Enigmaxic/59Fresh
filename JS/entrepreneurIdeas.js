@@ -35,6 +35,9 @@ function displayIdeas(data) {
 
 $(document).ready(function() {
 
+//initialize sidebar
+    $("ul#sidebar").sidebar({});
+
     //Grab 5 profiles to start
     $.ajax({
         type: "POST",

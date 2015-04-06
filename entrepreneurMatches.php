@@ -12,17 +12,19 @@
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <script src="JS/entrepreneurMatches.js"></script>
             <div data-role="header"> 
-                <a href="/59SecondPitch/entrepreneurHome.php" rel="external" data-icon="home" >Home</a>
-                <h1>Matches</h1>
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="/59SecondPitch/manageProfile.php" rel='external' style='white-space: normal'>Manage Profile</a></li>
-                        <li><a href="/59SecondPitch/entrepreneurIdeas.php" rel='external' style='white-space: normal'>My Ventures</a></li>
-                        <li><a href="/59SecondPitch/entrepreneurMatches.php" rel='external' style='white-space: normal'>Matches</a></li>
-                        <li><a href="/59SecondPitch/entrepreneurStatistics.php" rel='external' style='white-space: normal'>Statistics</a></li>
-                        <li><a href="/59SecondPitch/login.php" rel='external' style='white-space: normal'>Logout</a></li>
-                    </ul>
-                </div><!-- /navbar -->
+                <a href="/59SecondPitch/entrepreneurHome.php" rel="external" data-icon="home">Home</a>
+                <h1>Matches</h1>					
+                <a data-role="none">
+                    <label for="navMenu" class="ui-hidden-accessible">Menu</label>
+                    <select name="navMenu" id="navMenu" data-icon="bars">
+                        <option selected disabled>Menu</option>
+                        <option value="/59SecondPitch/manageProfile.php">Manage Profile</option>
+                        <option value="/59SecondPitch/entrepreneurIdeas.php">My Ventures</option>
+                        <option value="/59SecondPitch/entrepreneurMatches.php">Matches</option>
+                        <option value="/59SecondPitch/entrepreneurStatistics.php">Statistics</option>
+                        <option value="/59SecondPitch/login.php">Logout</option>
+                    </select>
+                </a>
             </div><!-- /header -->
             
             <div data-role="content" id="matches" style="background:'#000000'">	
