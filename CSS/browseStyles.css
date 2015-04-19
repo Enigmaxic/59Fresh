@@ -11,8 +11,8 @@ and open the template in the editor.
     
     background-color: black;
     color:black;
-    height:500px;
-    width:500px;
+    height: 100%;
+    width: 100%;
     word-wrap: break-word
 }
 

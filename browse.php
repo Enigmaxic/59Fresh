@@ -25,7 +25,7 @@ include_once 'FiftyNineDAO.php';
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <script src="JS/bootstrap.min.js"></script>
         <script src="JS/jquery.coverflow.js"></script>
-        <script src="JS/browse.js"></script>
+        <script src="JS/browseMobile.js"></script>
 
         <div data-role="header">
             <a href="/59SecondPitch/investorHome.php" rel="external" data-icon="home">Home</a>
@@ -52,28 +52,10 @@ include_once 'FiftyNineDAO.php';
                 <div id ="fullProfile" class ="row-fluid" style="display: none;">
                     <div id ="fullProfileDisplay" class ="text-center">
                         <div id ="f1" style ="display: none;" ></div>
-                        <div id ="f2" style ="display: none;"></div>
-                        <div id ="f3" style ="display: none;"></div>
-                        <div id ="f4" style ="display: none;"></div>
-                        <div id ="f5" style ="display: none;"></div>
                     </div>
                 </div>
             </div>
-
-            <!--Button Container-->
-            <div class="container-fluid" style="background:#000000">
-                <div  class="row-fluid">
-                    <div  class ="centered text-center" >
-                        <!--<button type="button" id ="nothanks" class="depth1">X</button>
-                        <button type="button" id ="feedback" class="btn btn-info">Feedback</button>
-                        <button type="button" id ="track" class="btn btn-info">Track</button>
-    
-                        <button type="button" id ="match" class="depth">&#10004;</button>-->
-                        <button type="button" id ="next" class="ph-button ph-btn-red">Next</button>
-                    </div>
-                </div>
-            </div>
-
+            
             <div id="dialog" class="web_dialog">
                 <table style="width: 100%; border: 0px;" cellpadding="3" cellspacing="0">
                     <tr>
