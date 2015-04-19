@@ -23,9 +23,10 @@ function displayIdeas(data) {
 </div>*/
              
             $("#set").append('<div data-role="collapsible" >'+
-            '<h3>'+profile["firstname"]+' '+profile["lastname"]+'</h3>'+
+           '<h3>'+profile["firstname"]+' '+profile["lastname"]+' '+ '<img height="20" width="20" alt=""IMG/default.png" src="'+pic+'" />'+'</h3'+
             
             '<p>'+profile["class"]+'</p>'+
+            
                 '<p>Location: '+profile["city"]+'</p>'+
                 '<p>Age:'+profile["age"]+'</p>'+
                 '<p>Alma Mater:'+profile["almamater"]+'</p>'+
@@ -58,7 +59,7 @@ function displayIdeas(data) {
         } else if(profile["contact_type"]==="Email"){
             
             $("#set").append('<div data-role="collapsible" >'+
-            '<h3>'+profile["firstname"]+' '+profile["lastname"]+'</h3>'+
+            '<h3>'+profile["firstname"]+' '+profile["lastname"]+' '+ '<img height="20" width="20" alt=""IMG/default.png" src="'+pic+'" />'+'</h3>'+
             
             '<p>'+profile["class"]+'</p>'+
                 '<p>Location: '+profile["city"]+'</p>'+
@@ -92,7 +93,7 @@ function displayIdeas(data) {
         else  {
         
             $("#set").append('<div data-role="collapsible" >'+
-            '<h3>'+profile["firstname"]+' '+profile["lastname"]+'</h3>'+
+            '<h3>'+profile["firstname"]+' '+profile["lastname"]+' '+ '<img height="20" width="20" alt="IMG/default.png" src="'+pic+'" />'+'</h3>'+
             
             '<p>'+profile["class"]+'</p>'+
                 '<p>Location: '+profile["city"]+'</p>'+
