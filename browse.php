@@ -54,7 +54,7 @@ include_once 'FiftyNineDAO.php';
             <div data-role="footer" data-position="fixed">
                 <div class = "ui-grid-c" >
                     <div class="ui-block-a">
-                        <figure><img id="leftIMG" src="IMG/redLeft.png" alt="Profile Picture missing" class="swipePicture"></figure>
+                        <figure><img id="leftIMG" style="width: 100%;" src="IMG/redLeft.png" alt="Profile Picture missing" class="swipePicture"></figure>
                     </div>
                     <div class="ui-block-b">
                         <p>Swipe left to view another</p>
@@ -63,7 +63,7 @@ include_once 'FiftyNineDAO.php';
                         <p>Swipe right to favorite</p>
                     </div>
                     <div class="ui-block-d">
-                        <figure><img id="rightIMG" src="IMG/greenRight.png" alt="Profile Picture missing" class="swipePicture"></figure>
+                        <figure><img id="rightIMG" style="width: 100%;" src="IMG/greenRight.png" alt="Profile Picture missing" class="swipePicture"></figure>
                     </div>
                 </div>
             </div>
